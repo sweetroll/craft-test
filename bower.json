@@ -1,0 +1,13 @@
+{
+  "name": "evolution7",
+  "private": true,
+  "version": "0.0.0",
+  "authors": [
+    "Evolution7 <dev@evolution7.com.au>"
+  ],
+  "dependencies": {
+    "detectizr": "~2.2.0",
+    "modernizr": "components-modernizr#~2.8.3",
+    "finesse.css": "~1.0.0"
+  }
+}

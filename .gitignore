@@ -1,0 +1,17 @@
+# Craft files
+/craft/config/db.php
+/craft/storage
+/craft/templates/
+
+# System
+.DS_Store
+node_modules
+bower_components
+
+# Generated files
+/rev-manifest.json
+/sassdoc
+public/*
+!public/index.php
+!public/.htaccess
+!public/robots.txt
