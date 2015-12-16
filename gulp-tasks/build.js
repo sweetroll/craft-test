@@ -8,7 +8,6 @@ module.exports = function() {
         // Run clean task before all others.
         runSequence([
             'izr',
-            'vendor',
             'scripts',
             'styles',
             'images',

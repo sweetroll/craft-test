@@ -8,6 +8,7 @@ const browserSync = bsCreate('developmentServer');
 module.exports = function() {
     gulp.task('browserSync', function() {
         return browserSync.init({
+            proxy: config.browserSync.proxy,
             port: config.browserSync.port
         });
     });

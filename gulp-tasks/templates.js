@@ -13,16 +13,12 @@ module.exports = function(isProduction) {
 
     gulp.task('templates', ['izr', 'scripts', 'styles'], function () {
         return gulp.src(config.templates.src)
-            .pipe(gulpif(!isProduction,
-                substituter(config.substituter)
-            ))
             .pipe(gulp.dest(config.templates.dist));
     });
 
     gulp.task('templates:watch', function () {
         return gulp.src(config.templates.src)
             .pipe(changed(config.templates.dist))
-            .pipe(substituter(config.substituter))
             .pipe(gulp.dest(config.templates.dist))
             .on('end', function () {
                 browserSync.reload();

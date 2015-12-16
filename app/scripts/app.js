@@ -1,3 +1,3 @@
 'use strict';
 
-import $ from 'zepto-browserify';
+import $ from 'jquery';

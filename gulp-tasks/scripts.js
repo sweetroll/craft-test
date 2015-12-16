@@ -18,7 +18,6 @@ const browserSync = bsGet('developmentServer');
 
 let executeBundle = function (bundle, isProduction) {
     bundle
-        .external('zepto-browserify')
         .transform(babelify.configure({
             ignore: /(bower_components)|(node_modules)/,
             presets: ['es2015']
@@ -68,13 +67,4 @@ module.exports = function(isProduction) {
         });
     });
 
-    gulp.task('vendor', function() {
-        return browserify()
-            .require('zepto-browserify')
-            .bundle()
-            .pipe(source('vendor.js'))
-            .pipe(buffer())
-            .pipe(uglify())
-            .pipe(gulp.dest(config.scripts.dist));
-    });
 };

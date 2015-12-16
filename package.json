@@ -50,6 +50,6 @@
     "node": ">=0.8.0"
   },
   "dependencies": {
-    "zepto-browserify": "^1.0.0"
+    "jquery": "^2.1.4"
   }
 }

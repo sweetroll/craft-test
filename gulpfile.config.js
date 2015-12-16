@@ -22,11 +22,7 @@ module.exports = {
         dist: './public/images/'
     },
     browserSync: {
-        port: 3000
-    },
-    substituter: {
-        browsersync: function() {
-            return '<script type=\'text\/javascript\' id=\"__bs_script__\">\/\/<![CDATA[\r\n    document.write(\"<script async src=\'http:\/\/HOST:3000\/browser-sync\/browser-sync-client.2.10.0.js\'><\\\/script>\".replace(\"HOST\", location.hostname));\r\n\/\/]]><\/script>';
-        }
+        port: 3000,
+        proxy: "http://santi.dev"
     }
 };
