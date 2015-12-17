@@ -19,10 +19,43 @@
 </head>
 
 <body>
-	{% block content %}
-		<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
-		<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
-	{% endblock %}
+
+	<header class="site-header center-width">
+		<div id="site-logo">
+			<a href="#">
+				<img src="images/logo_bijou.jpg" alt="{{ siteName }}">
+			</a>
+		</div>
+		<nav class="site-nav">
+			<ul class="nav site-nav__list">
+				<li><a href="{{ siteUrl }}">Home</a></li>
+				<li><a href="{{ url('products') }}" {% if craft.request.firstSegment == 'products' %} class="active" {% endif %}>Collections</a></li>
+				<li><a href="{{ url('locations') }}" {% if craft.request.firstSegment == 'locations' %} class="active" {% endif %}>Locations</a></li>
+				<li><a href="{{ url('about') }}" {% if craft.request.firstSegment == 'about' %} class="active" {% endif %}>About</a></li>
+				<li><a href="{{ url('news') }}" {% if craft.request.firstSegment == 'news' %} class="active" {% endif %}>Blog</a></li>
+				<li><a href="{{ url('contact') }}" {% if craft.request.firstSegment == 'contact' %} class="active" {% endif %}>Contact</a></li>
+			</ul>
+		</nav>
+		<div id="site-cart">
+			<a href="">
+				<img src="images/cart.jpg" alt="">
+			</a>
+		</div>
+	</header>
+
+	<div class="wrapper center-width">
+		{% block content %}
+
+		{% endblock %}
+	</div>
+	<footer class="center-width">
+		<a href="#" class="social-link"><img src="images/fb.png" alt=""></a>
+		<a href="#" class="social-link"><img src="images/tw.png" alt=""></a>
+		<a href="#" class="social-link"><img src="images/ig.png" alt=""></a>
+		<a href="mailto:info@mysite.com" class="mail-contact">info@mysite.com</a>
+		<p class="small-text">© 2023 by Bijou. Proudly created with Wix.com</p>
+	</footer>
+
 
 	<script src="/scripts/vendor.js" defer></script>
 	<script src="/scripts/app.js" defer></script>

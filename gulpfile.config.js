@@ -23,6 +23,6 @@ module.exports = {
     },
     browserSync: {
         port: 3000,
-        proxy: "http://santi.dev"
+        proxy: "http://testsite.dev"
     }
 };

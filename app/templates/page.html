@@ -1,3 +1,31 @@
 {% extends "_layout" %}
 {% set title = entry.title %}
-{% block content %}{% endblock %}
+{% block content %}
+    <h2>{{ entry.headline }}</h2>
+    <div class="center-fit {% if craft.request.firstSegment == 'locations' %} center-fit-mini {% endif %}">
+        <p>{{ entry.body }}</p>
+    
+        <div id="about-images">
+            {% for asset in entry.heroImage %}
+                <img src="{{ asset.getUrl() }}" />
+            {% endfor %}
+        </div>
+    
+        {% if craft.request.firstSegment == 'locations' %}
+            <div class="grid grid--wide">
+                <div class="grid__item one-half palm-one-half">
+                     <div class="island">
+                        <a href="#">{{ entry.locationTitle }}</a>
+                        <p>{{ entry.locationAddress }}</p>
+                     </div>
+                </div>
+                <div class="grid__item one-half palm-one-half">
+                     <div class="island">
+                        <a href="#">{{ entry.locationTitle2 }}</a>
+                        <p>{{ entry.locationAddress2 }}</p>
+                     </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

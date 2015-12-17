@@ -1,0 +1,102 @@
+// To overwrite finnesse settings && custom styles of the project?
+.center-width {
+    margin:0 auto;
+    max-width:960px;
+}
+
+.one-half {
+    width: 49%;
+}
+
+header {
+    padding: 20px 0;
+
+    div, nav {
+        display: inline-block;
+    }
+
+    #site-logo img {
+        vertical-align: sub;
+    }
+
+    nav {
+        vertical-align: super;
+        
+        &.site-nav ul li a {
+            padding: 0 25px;
+            font-size: 16px;
+            color: black;
+
+            &:hover, &.active {
+                color: #7795A3;
+            }
+        }
+    }
+
+    #site-cart {
+        float: right;
+    }
+}
+
+.wrapper {
+    padding-bottom: 60px;
+
+    h2 {
+        position: relative;
+        text-align: center;
+        padding: 30px 0;
+        margin-bottom: 35px;
+
+        // Border bottom of h2
+        &:before {
+            content : "";
+            position: absolute;
+            left    : 48%;
+            bottom  : 0;
+            height  : 2px;
+            width   : 4%;  /* or 100px */
+            border-bottom:2px solid black;
+        }
+    }
+
+    p {
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 14px;
+    }
+
+    .center-fit {
+        text-align: center;
+        margin: 0 auto;
+        max-width: 740px;
+    }
+
+    .center-fit-mini {
+        text-align: center;
+        margin: 0 auto;
+        max-width: 480px;
+    }
+
+    #about-images img:nth-child(1) {
+        margin-right: 10px;
+    }
+}
+
+footer {
+    text-align:center;
+
+    .social-link {
+        padding: 0 5px;
+    }
+
+    .mail-contact {
+        display: block;
+        margin: 2px 0 20px 0;
+        font-size: 14px;
+    }
+}
+
+.small-text {
+    font-size: 12px;
+    color: #8B8A8A;
+}

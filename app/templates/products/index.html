@@ -1,4 +1,10 @@
 {% extends "_layout" %}
 {% set title = "Products" %}
-{% block content %}{% endblock %}
+{% block content %}
+    {% for product in craft.entries.find({section: 'Products', limit: '4'}) %}
+        <h1>{{ product.title }}</h1>
+        <p>{{ product.body }}</p>
+        <p>{{ product.price }}</p>
+    {% endfor %}
+{% endblock %}
 
