@@ -1,3 +1,5 @@
 'use strict';
 
-import $ from 'jquery';
+const $ = global.jQuery = require('jquery');
+
+require('./homepage');

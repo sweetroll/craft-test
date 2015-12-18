@@ -1,6 +1,6 @@
 {% extends "_layout" %}
 {% block content %}
-    <div class="slider">
+    <div class="slider js-slider gtm-slider">
         <ul>
             {% for slide in entry.slideImages %}
                 <li><img src="{{ slide.url }}" /></li>
@@ -14,7 +14,7 @@
     </div>
     <div class="center-size">
         {% spaceless %}
-        <div class="grid  grid--narrow products">
+        <div class="grid grid--narrow products">
             {% for product in craft.entries.find({section: 'Products', limit: '4'}) %}
             <div class="grid__item one-quarter desk-wide-one-quarter palm-one-half">
                 <div class="products-media">

@@ -17,36 +17,16 @@
 	<link rel="home" href="{{ siteUrl }}" />
 	<link rel="stylesheet" href="/styles/app.css">
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
-
-	{% if entry.section.name == "Homepage" %}
-		<!-- Slider CSS -->
-		<link rel="stylesheet" href="/styles/slider/unslider.css">
-		<link rel="stylesheet" href="/styles/slider/unslider-dots.css">
-
-		<!-- Slider javascript -->
-		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-		<script src="/scripts/unslider-min.js"></script> 
-
-		<script>
-			$(function() { 
-				$('.slider').unslider({
-					autoplay: true, 
-					arrows: false 
-				});
- 			})
- 		</script>
-	{% endif %}
 </head>
 <body>
 
-	<header class="site-header center-size">
-		<div id="site-logo">
-			<a href="{{ siteUrl }}">
-				<img src="images/logo_bijou.jpg" alt="{{ siteName }}">
-			</a>
-		</div>
-		<nav class="site-nav">
-			<ul class="nav site-nav__list">
+	<header class="header center-size">
+		<a class="header__logo" href="{{ siteUrl }}">
+			<img src="images/logo_bijou.jpg" alt="{{ siteName }}">
+		</a>
+
+		<nav class="header__nav">
+			<ul class="nav nav--block">
 				<li><a href="{{ siteUrl }}"{% if entry.section.name == "Homepage" %} class="active" {% endif %}>Home</a></li>
 				<li><a href="{{ url('products') }}" {% if craft.request.firstSegment == 'products' %} class="active" {% endif %}>Collections</a></li>
 				<li><a href="{{ url('locations') }}" {% if craft.request.firstSegment == 'locations' %} class="active" {% endif %}>Locations</a></li>
@@ -55,7 +35,8 @@
 				<li><a href="{{ url('contact') }}" {% if craft.request.firstSegment == 'contact' %} class="active" {% endif %}>Contact</a></li>
 			</ul>
 		</nav>
-		<div id="site-cart">
+
+		<div class="header__cart">
 			<a href="">
 				<img src="images/cart.jpg" alt="">
 			</a>
@@ -75,8 +56,6 @@
 		<p class="text-small">© 2023 by Bijou. Proudly created with Wix.com</p>
 	</footer>
 
-	<script src="/scripts/vendor.js" defer></script>
 	<script src="/scripts/app.js" defer></script>
-	<!-- substitute:browsersync -->
 </body>
 </html>

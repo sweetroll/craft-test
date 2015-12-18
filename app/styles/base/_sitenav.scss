@@ -1,0 +1,12 @@
+.sitenav {
+    display: inline-block;
+    vertical-align: super;
+
+    a {
+        color: getColour('grey', 'dark');
+
+        &:hover, &.active {
+            color: #7795A3;
+        }
+    }
+}

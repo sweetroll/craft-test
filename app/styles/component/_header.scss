@@ -1,0 +1,27 @@
+.header {
+    padding: 20px 0;
+}
+
+    .header__logo {
+        display: inline-block;
+
+        img {
+            vertical-align: sub;
+        }
+    }
+
+    .header__nav {
+        @extend .sitenav;
+
+        a {
+            color: getColour('red');
+
+            &:hover, &.active {
+                background-color: getColour('blue');
+            }
+        }
+    }
+
+    .header__cart {
+        float: right;
+    }

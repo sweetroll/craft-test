@@ -1,8 +1,6 @@
 // To overwrite finnesse settings && custom styles of the project?
-body, h1, h2, h3, h4, h5, h6  {
-    font-family: 'Lato', sans-serif;
-}
 
+// Type.scss
 h2 {
     text-transform: uppercase;
     font-weight: normal;
@@ -13,6 +11,13 @@ h2 {
     max-width:960px;
 }
 
+.container {
+    margin:0 auto;
+    max-width:960px;
+}
+
+
+// Finesse has .cf
 .clear {
     width: 100%;
     clear:both;
@@ -21,40 +26,6 @@ h2 {
 .error {
     color: $danger-color;
     display: none; //contact-form not working because crfToken error...
-}
-
-.grid--narrow > .grid__item {
-    padding-left: 1.45em;
-}
-
-header {
-    padding: 20px 0;
-
-    div, nav {
-        display: inline-block;
-    }
-
-    #site-logo img {
-        vertical-align: sub;
-    }
-
-    nav {
-        vertical-align: super;
-        
-        &.site-nav ul li a {
-            padding: 0 25px;
-            font-size: 15px;
-            color: black;
-
-            &:hover, &.active {
-                color: #7795A3;
-            }
-        }
-    }
-
-    #site-cart {
-        float: right;
-    }
 }
 
 .unslider .unslider-nav {
@@ -190,7 +161,7 @@ header {
 .products {
 
     .grid__item {
-        margin-bottom: 15px; 
+        margin-bottom: 15px;
     }
 
     p {
@@ -319,13 +290,4 @@ footer {
         margin: 2px 0 20px 0;
         font-size: 14px;
     }
-}
-
-.text-small {
-    font-size: 12px;
-    color: #8B8A8A;
-}
-
-.text-big {
-    font-size: 18px;
 }
