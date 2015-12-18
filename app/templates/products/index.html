@@ -1,10 +1,27 @@
 {% extends "_layout" %}
 {% set title = "Products" %}
 {% block content %}
-    {% for product in craft.entries.find({section: 'Products', limit: '4'}) %}
-        <h1>{{ product.title }}</h1>
-        <p>{{ product.body }}</p>
-        <p>{{ product.price }}</p>
-    {% endfor %}
+<div class="center-size">
+    <h2>Collection</h2>
+    {% spaceless %}
+    <div class="grid  grid--narrow products">
+        {% for product in craft.entries.find({section: 'Products', limit: '8'}) %}
+        <div class="grid__item one-quarter desk-wide-one-quarter palm-one-half">
+            <div class="products-media">
+                {% for asset in product.images %}
+                    <a href="" title="{{ product.getUrl() }}" class="product-image"><img src="{{ asset.getUrl() }}" /></a>
+                {% endfor %}
+                <a href="{{ product.getUrl() }}" class="quick-view">Quick view</a>
+                {% if product.isOnSale %}
+                    <span class="on-sale">On sale</span>
+                {% endif %}
+            </div>
+            <a href="" title="{{ product.getUrl() }}" class="product-title">{{ product.title }}</a>
+            <p class="text-small">${{ product.price }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% endspaceless %}
+</div>
 {% endblock %}
 

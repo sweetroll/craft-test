@@ -1,11 +1,30 @@
 // To overwrite finnesse settings && custom styles of the project?
-.center-width {
+body, h1, h2, h3, h4, h5, h6  {
+    font-family: 'Lato', sans-serif;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.center-size {
     margin:0 auto;
     max-width:960px;
 }
 
-.one-half {
-    width: 49%;
+.clear {
+    width: 100%;
+    clear:both;
+}
+
+.error {
+    color: $danger-color;
+    display: none; //contact-form not working because crfToken error...
+}
+
+.grid--narrow > .grid__item {
+    padding-left: 1.45em;
 }
 
 header {
@@ -24,7 +43,7 @@ header {
         
         &.site-nav ul li a {
             padding: 0 25px;
-            font-size: 16px;
+            font-size: 15px;
             color: black;
 
             &:hover, &.active {
@@ -38,8 +57,64 @@ header {
     }
 }
 
+.unslider .unslider-nav {
+    margin-top: -60px;
+    margin-bottom: 70px;
+    position: relative;
+
+    ol li {
+        width: 12px;
+        height: 12px;
+        background-color: white;
+        border:none;
+        border-radius: 50%;
+
+        &.unslider-active {
+            background-color: #7A9E91;
+        }
+    }
+}
+
+#slide-text {
+    width: 580px;
+    padding: 40px 0;
+    margin: 0 auto;
+    position: absolute;
+    top: 270px;
+    left: 50%;
+    margin-left: -290px;
+    text-align: center;
+    background-color: rgba(255,255,255,0.5);
+
+    p {
+        font-size: 22px;
+        margin: 10px;
+        letter-spacing: 5px;
+    }
+
+    h1 {
+        text-transform: uppercase;
+        font-size: 28px;
+        letter-spacing: 10px;
+        margin: 10px;
+    }
+
+    button {
+        background-color: #C7B56F;
+        margin-bottom: -90px;
+        font-weight: normal;
+        padding: 15px 60px;
+        border-radius: 0;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
 .wrapper {
     padding-bottom: 60px;
+    font-size: 14px;
 
     h2 {
         position: relative;
@@ -62,7 +137,6 @@ header {
     p {
         text-align: center;
         margin-bottom: 25px;
-        font-size: 14px;
     }
 
     .center-fit {
@@ -77,13 +151,164 @@ header {
         max-width: 480px;
     }
 
+    .location-address {
+        margin-bottom: 50px;
+    }
+
     #about-images img:nth-child(1) {
         margin-right: 10px;
     }
 }
 
+#contact-form {
+    max-width: 340px;
+    margin: 0 auto;
+
+    input, textarea {
+        border: 2px solid #CCDAE0;
+        -webkit-appearance: none;
+        border-radius: 0;
+        margin-bottom: 5px;
+    }
+
+    textarea {
+        resize: none;
+        height: 130px;
+    }
+
+    .submit {
+        float: right;
+        background-color: #7795A3;
+        padding: 10px 5px;
+        font-weight: normal;
+        font-size: 14px;
+        border: none;
+        margin-bottom: 20px;
+    }
+}
+
+.products {
+
+    .grid__item {
+        margin-bottom: 15px; 
+    }
+
+    p {
+        width: 100%;
+        text-align: left;
+        margin-top: 10px;
+    }
+    .on-sale {
+        background-color: #7A9E91;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index:2;
+        font-size: 16px;
+        overflow: hidden;
+        color: white;
+        display: inline-block;
+        padding: 5px 10px;
+    }
+    .products-media {
+        width: 100%;
+        height: 218px;
+        overflow: hidden;
+        margin-bottom: 15px;
+        position:relative;
+
+        a {
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+
+            &.product-image:nth-child(2) {
+                transition: opacity 0.6s ease-out;
+                opacity: 0;
+                overflow: hidden;
+            }
+        }
+
+        .quick-view {
+            width: 100%;
+            padding: 20px 0;
+            position: absolute;
+            bottom: -70px;
+            left: 0;
+            z-index:2;
+            overflow: hidden;
+            opacity: 0.8;
+            text-align: center;
+            background-color: white;
+            text-transform: uppercase;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            font-size: 14px;
+            color: black;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        &:hover {
+
+            a.product-image:nth-child(1) {
+                display: none;
+            }
+
+            a.product-image:nth-child(2) {
+                display: block;
+                opacity: 1;
+            }
+
+            .quick-view {
+                bottom: 0px;
+            }
+        }
+    }
+
+    a.product-title {
+        color: black;
+    }
+}
+
+.blog-article {
+
+    a h3 {
+        margin:10px 0;
+        font-size: 18px;
+    }
+
+    .new-image {
+        height: 240px;
+        width: 100%;
+        overflow: hidden;
+        display: block;
+        transition: opacity 0.6s ease-out;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    p {
+        text-align: left;
+    }
+}
+
 footer {
     text-align:center;
+    padding-bottom: 25px;
+
+    a {
+        color: black;
+    }
 
     .social-link {
         padding: 0 5px;
@@ -96,7 +321,11 @@ footer {
     }
 }
 
-.small-text {
+.text-small {
     font-size: 12px;
     color: #8B8A8A;
+}
+
+.text-big {
+    font-size: 18px;
 }

@@ -1,2 +1,36 @@
 {% extends "_layout" %}
-{% block content %}{% endblock %}
+{% block content %}
+    <div class="slider">
+        <ul>
+            {% for slide in entry.slideImages %}
+                <li><img src="{{ slide.url }}" /></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="slide-text">
+        <p>The New Minimal</p>
+        <h1>Gold collection</h1>
+        <button class="btn">Shop Collection</button>
+    </div>
+    <div class="center-size">
+        {% spaceless %}
+        <div class="grid  grid--narrow products">
+            {% for product in craft.entries.find({section: 'Products', limit: '4'}) %}
+            <div class="grid__item one-quarter desk-wide-one-quarter palm-one-half">
+                <div class="products-media">
+                    {% for asset in product.images %}
+                        <a href="" title="{{ product.getUrl() }}" class="product-image"><img src="{{ asset.getUrl() }}" /></a>
+                    {% endfor %}
+                    <a href="{{ product.getUrl() }}" class="quick-view">Quick view</a>
+                    {% if product.isOnSale %}
+                        <span class="on-sale">On sale</span>
+                    {% endif %}
+                </div>
+                <a href="" title="{{ product.getUrl() }}" class="product-title">{{ product.title }}</a>
+                <p class="text-small">${{ product.price }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endspaceless %}
+    </div>
+{% endblock %}

@@ -8,5 +8,10 @@
  */
 
 return array(
-
+    //'enableCsrfProtection' => true,
+    'testsite.dev' => array(
+        'environmentVariables' => array(
+            'siteUrl' => 'http://testsite.dev/'
+        )
+    ),
 );

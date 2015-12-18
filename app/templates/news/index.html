@@ -1,4 +1,26 @@
 {% extends "_layout" %}
 {% set title = "News" %}
-{% block content %}{% endblock %}
+{% block content %}
+    <div class="center-size">
+        <h2>Last news</h2>
+
+        {% spaceless %}
+        <div class="grid grid--wide">
+            {% for new in craft.entries.find({section: 'News', limit: '8'}) %}
+            <div class="grid__item one-half palm-one-half">
+                 <div class="island blog-article">
+                   {% for asset in new.heroImage %}
+                        <a href="{{ new.getUrl() }}" title="{{ new.title }}" class="new-image"><img src="{{ asset.getUrl() }}" /></a>
+                    {% endfor %}
+                    <a href="" title="{{ new.getUrl() }}">
+                        <h3>{{ new.title }}</h3>
+                    </a>
+                    <p>{{ new.headline }}</p>
+                 </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endspaceless %}
+    </div>
+{% endblock %}
 

@@ -16,19 +16,38 @@
 	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
 	<link rel="home" href="{{ siteUrl }}" />
 	<link rel="stylesheet" href="/styles/app.css">
-</head>
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
 
+	{% if entry.section.name == "Homepage" %}
+		<!-- Slider CSS -->
+		<link rel="stylesheet" href="/styles/slider/unslider.css">
+		<link rel="stylesheet" href="/styles/slider/unslider-dots.css">
+
+		<!-- Slider javascript -->
+		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="/scripts/unslider-min.js"></script> 
+
+		<script>
+			$(function() { 
+				$('.slider').unslider({
+					autoplay: true, 
+					arrows: false 
+				});
+ 			})
+ 		</script>
+	{% endif %}
+</head>
 <body>
 
-	<header class="site-header center-width">
+	<header class="site-header center-size">
 		<div id="site-logo">
-			<a href="#">
+			<a href="{{ siteUrl }}">
 				<img src="images/logo_bijou.jpg" alt="{{ siteName }}">
 			</a>
 		</div>
 		<nav class="site-nav">
 			<ul class="nav site-nav__list">
-				<li><a href="{{ siteUrl }}">Home</a></li>
+				<li><a href="{{ siteUrl }}"{% if entry.section.name == "Homepage" %} class="active" {% endif %}>Home</a></li>
 				<li><a href="{{ url('products') }}" {% if craft.request.firstSegment == 'products' %} class="active" {% endif %}>Collections</a></li>
 				<li><a href="{{ url('locations') }}" {% if craft.request.firstSegment == 'locations' %} class="active" {% endif %}>Locations</a></li>
 				<li><a href="{{ url('about') }}" {% if craft.request.firstSegment == 'about' %} class="active" {% endif %}>About</a></li>
@@ -43,19 +62,18 @@
 		</div>
 	</header>
 
-	<div class="wrapper center-width">
+	<div class="wrapper">
 		{% block content %}
 
 		{% endblock %}
 	</div>
-	<footer class="center-width">
+	<footer class="center-size">
 		<a href="#" class="social-link"><img src="images/fb.png" alt=""></a>
 		<a href="#" class="social-link"><img src="images/tw.png" alt=""></a>
 		<a href="#" class="social-link"><img src="images/ig.png" alt=""></a>
 		<a href="mailto:info@mysite.com" class="mail-contact">info@mysite.com</a>
-		<p class="small-text">© 2023 by Bijou. Proudly created with Wix.com</p>
+		<p class="text-small">© 2023 by Bijou. Proudly created with Wix.com</p>
 	</footer>
-
 
 	<script src="/scripts/vendor.js" defer></script>
 	<script src="/scripts/app.js" defer></script>
