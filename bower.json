@@ -8,7 +8,7 @@
   "dependencies": {
     "detectizr": "~2.2.0",
     "modernizr": "components-modernizr#~2.8.3",
-    "finesse.css": "~1.0.0",
+    "finesse.css": "1.0.0-beta.3",
     "unslider": "~2.0.2"
   }
 }
